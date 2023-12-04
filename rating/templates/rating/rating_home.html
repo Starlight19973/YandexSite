@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Товары{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Список товаров</h1>
+        {% for el in rating %}
+            <div class="alert alert-warning">
+                {% if el.image %}
+                    <img src="{{ el.image.url }}" alt="{{ el.title }}" style="max-width: 350px; height: auto;">
+                {% endif %}
+                <h2>{{ el.title }}</h2>
+                <p>{{ el.description }}</p>
+                <p><strong>Рейтинг:</strong> {{ el.rating }} из 5</p>
+                {% if el.review %}
+                    <p><strong>Отзыв:</strong> {{ el.review }}</p>
+                {% endif %}
+                {% if el.purchase_link %}
+                    <p><a href="{{ el.purchase_link }}">Купить</a></p>
+                {% endif %}
+                <p><small>Дата публикации: {{ el.date|date:"d.m.Y" }}</small></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

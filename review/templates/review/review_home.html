@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+
+
+{% block title %}Обзор техники для дома{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Обзоры бытовой Техники</h1>
+        <div class="reviews">
+        {% for review in reviews %}
+            <div class="review">
+        <h3>{{ review.product_name }} - {{ review.model }}</h3>
+        <p>{{ review.review_body }}</p>
+        <p><strong>Плюсы:</strong> {{ review.pros }}</p>
+        <p><strong>Минусы:</strong> {{ review.cons }}</p>
+        {% if review.purchase_link %}
+        <a href="{{ review.purchase_link }}">Подробнее</a>
+        {% endif %}
+        <p>Дата обзора: {{ review.review_date }}</p>
+    </div>
+    {% empty %}
+    <p>Обзоры не найдены.</p>
+    {% endfor %}
+</div>
+{% endblock %}
+

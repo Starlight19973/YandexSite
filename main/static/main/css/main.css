@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333; /* Цвет фона шапки */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Внутренние отступы шапки */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Выравнивание логотипа и названия сайта по вертикали */
+    /* Дополнительные стили для логотипа и названия сайта, если нужно */
+    text-align: left;
+}
+
+.logo-image {
+    height: 50px; /* Высота логотипа */
+    margin-right: 0.5rem;
+    text-align: left;
+}
+
+.text-container {
+    display: flex; /* Задаём блочное отображение для текстового контейнера */
+    margin-left: 10px; /* Добавляем небольшой отступ слева от логотипа */
+}
+
+
+
+.navigation-menu {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренний отступ */
+    margin: 0; /* Убираем внешний отступ */
+    display: flex; /* Применяем Flexbox для выравнивания элементов горизонтально */
+    gap: 20px; /* Расстояние между элементами меню */
+    /* Центрируем меню относительно header, если есть другие элементы */
+    margin-left: auto; /* Автоматический отступ слева */
+}
+
+
+
+.navigation-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem; /* Внутренние отступы пунктов меню */
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation-menu a:hover {
+    text-decoration: underline;
+}
+
+.auth-links a {
+    background-color: #007bff; /* Синий цвет фона для кнопок входа и регистрации */
+    border: none;
+    border-radius: 5px; /* Скругление углов */
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Внутренние отступы кнопок */
+    margin-left: 0.5rem; /* Отступ между кнопками */
+}
+
+.auth-links a:hover {
+    background-color: #0056b3; /* Темно-синий цвет фона при наведении */
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Минимальная высота будет равна высоте области просмотра */
+}
+
+main {
+    flex: 1;
+    padding: 20px; /* Отступы внутри основного содержимого */
+    background: url('../img/back.png') no-repeat center center fixed;
+    background-size: cover; /* Заполнение всей доступной области без потери пропорций */
+    /* Добавьте эти стили, если хотите, чтобы фоновое изображение не прокручивалось вместе со страницей */
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #333; /* Цвет фона футера */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.features {
+    text-align: center; /* Выравнивание текста по центру */
+    color: orange; /* Изменение цвета текста на оранжевый */
+    text-shadow: 1px 1px 2px black; /* Добавление тени к тексту для улучшения читаемости */
+}
+
+.site-name {
+    font-size: 1.5rem; /* Размер шрифта названия сайта */
+    font-weight: bold;
+    display: block; /* Это обеспечит, что 'site-name' отображается как блочный элемент */
+    margin: 0; /* Убираем любые стандартные отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.site-description {
+    display: block; /* Элемент блочный, занимает всю ширину и начинается с новой строки */
+    font-size: smaller; /* Уменьшенный размер шрифта */
+    color: gray; /* Цвет текста */
+    margin-top: 5px; /* Небольшой отступ сверху для разделения с 'site-name' */
+    text-align: left;
+}
+
+
+/* Стили для основного контента страницы */
+.content {
+    text-align: center; /* Выравнивание текста по центру */
+    color: orange; /* Цвет текста - оранжевый */
+}
+
+/* Стили для области с обзорами */
+.reviews {
+    margin: 0 auto; /* Центрирование блока обзоров */
+    max-width: 800px; /* Максимальная ширина блока, можно настроить по вашему усмотрению */
+}
+
+.review {
+    background-color: #fff; /* Фон для каждого обзора, можно изменить по вашему усмотрению */
+    padding: 20px; /* Внутренний отступ */
+    margin-bottom: 20px; /* Отступ снизу для каждого обзора */
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Тень для блока */
+}
+
+.review h3 {
+    margin-top: 0; /* Убираем отступ сверху для заголовка */
+}
+
+.review a {
+    color: orange; /* Цвет ссылок - оранжевый */
+    text-decoration: none; /* Убираем подчёркивание у ссылок */
+}
+
+.review a:hover {
+    text-decoration: underline; /* Добавляем подчёркивание при наведении */
+}
+
+/* Стили для даты обзора */
+.review p:last-child {
+    font-style: italic; /* Курсив для текста */
+}
+
+.spacer {
+    flex: 1; /* Элемент занимает доступное пространство, но остаётся невидимым */
+}
