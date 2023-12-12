@@ -26,55 +26,52 @@ header {
 }
 
 .logo-image {
-    height: 50px; /* Высота логотипа */
+    height: 80px; /* Высота логотипа */
     margin-right: 0.5rem;
     text-align: left;
 }
 
 .text-container {
-    display: flex; /* Задаём блочное отображение для текстового контейнера */
-    margin-left: 10px; /* Добавляем небольшой отступ слева от логотипа */
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Выравнивание текста по левому краю */
+    font-weight: bold; /* Делает текст жирным */
+    font-size: larger; /* Увеличивает размер шрифта */
 }
+
 
 
 
 .navigation-menu {
-    list-style: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем внутренний отступ */
-    margin: 0; /* Убираем внешний отступ */
-    display: flex; /* Применяем Flexbox для выравнивания элементов горизонтально */
-    gap: 20px; /* Расстояние между элементами меню */
-    /* Центрируем меню относительно header, если есть другие элементы */
-    margin-left: auto; /* Автоматический отступ слева */
+    padding: 0; /* Убрать внутренние отступы списка */
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
-
-
-.navigation-menu a {
-    text-decoration: none;
-    color: white;
-    padding: 0.5rem 1rem; /* Внутренние отступы пунктов меню */
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.navigation-menu li {
+    display: inline-block; /* Сделать элементы списка блочными и расположить в одну строку */
+    margin: 0 15px; /* Добавить небольшие отступы между элементами */
 }
 
-.navigation-menu a:hover {
-    text-decoration: underline;
+/* Опционально, чтобы стилизовать ссылки */
+.navigation-menu li a {
+    text-decoration: none; /* Убрать подчеркивание ссылок */
+    font-weight: bold; /* Делает текст жирным */
+    font-size: larger; /* Увеличивает размер шрифта */
+    color: orange; /* Меняет цвет ссылок на оранжевый */
 }
 
-.auth-links a {
-    background-color: #007bff; /* Синий цвет фона для кнопок входа и регистрации */
-    border: none;
-    border-radius: 5px; /* Скругление углов */
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Внутренние отступы кнопок */
-    margin-left: 0.5rem; /* Отступ между кнопками */
+/* Добавьте следующие стили, чтобы центрировать navigation-menu в шапке */
+header .logo-container {
+    flex: 1; /* Расширить контейнер логотипа, чтобы вытолкнуть navigation-menu в центр */
+    text-align: center; /* Центрировать текст внутри логотипа и названия сайта */
 }
 
-.auth-links a:hover {
-    background-color: #0056b3; /* Темно-синий цвет фона при наведении */
+.navigation-menu {
+    display: inline-block; /* Сделать список inline-block, чтобы центрировать его по горизонтали */
 }
 
 
@@ -108,9 +105,32 @@ footer {
 
 .features {
     text-align: center; /* Выравнивание текста по центру */
-    color: orange; /* Изменение цвета текста на оранжевый */
-    text-shadow: 1px 1px 2px black; /* Добавление тени к тексту для улучшения читаемости */
+    color: black; /* Белый цвет текста */
+    font-size: 1.2em; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    background: orange; /* Фоновый цвет, если нужен (пример: синий) */
+    /* Другие стили, если они нужны, например, отступы */
+    padding: 20px;
 }
+
+
+/* Если background фона слишком яркий, можно добавить полупрозрачный слой для улучшения читаемости */
+.features:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный слой */
+    z-index: -1;
+}
+
+/* Добавление относительного позиционирования к .features для корректного отображения псевдоэлемента */
+.features {
+    position: relative;
+}
+
 
 .site-name {
     font-size: 1.5rem; /* Размер шрифта названия сайта */
@@ -136,38 +156,134 @@ footer {
     color: orange; /* Цвет текста - оранжевый */
 }
 
-/* Стили для области с обзорами */
-.reviews {
-    margin: 0 auto; /* Центрирование блока обзоров */
-    max-width: 800px; /* Максимальная ширина блока, можно настроить по вашему усмотрению */
+
+.future, .super {
+    background-color: white; /* Фон блока */
+    color: black; /* Цвет текста */
+    padding: 20px; /* Внутренний отступ */
+    margin: 20px auto; /* Вертикальный отступ сверху и снизу, центрирование по горизонтали */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень вокруг блока */
+    max-width: 800px; /* Максимальная ширина блока */
+    display: block; /* Задает блочное отображение */
 }
+
+.future h1, .future p,
+.super h1, .super p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста для улучшения читаемости */
+}
+
+.future {
+    margin-bottom: 20px; /* Отступ снизу у блока .future */
+}
+
 
 .review {
-    background-color: #fff; /* Фон для каждого обзора, можно изменить по вашему усмотрению */
-    padding: 20px; /* Внутренний отступ */
-    margin-bottom: 20px; /* Отступ снизу для каждого обзора */
-    border-radius: 10px; /* Скругление углов */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Тень для блока */
+    display: flex;
+    flex-direction: column; /* Организует содержимое вертикально */
+    align-items: center; /* Выравнивает содержимое по центру по горизонтали */
+    background-color: gray;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: white;
+    font-size: 1.1em;
 }
 
-.review h3 {
-    margin-top: 0; /* Убираем отступ сверху для заголовка */
+.review-header {
+    display: flex;
+    flex-direction: column; /* Организует содержимое вертикально */
+    align-items: center; /* Выравнивает элементы по центру */
+    width: 100%; /* Занимает всю ширину карточки */
+}
+
+.review-header img {
+    max-width: 28%; /* Максимальная ширина изображения */
+    height: auto;
+    margin-bottom: 20px; /* Отступ снизу от изображения до текста */
+}
+
+.review h3, .review p, .review a {
+    text-align: center; /* Выравнивает текст и ссылки по центру */
+    width: 100%; /* Занимает всю ширину карточки */
 }
 
 .review a {
-    color: orange; /* Цвет ссылок - оранжевый */
-    text-decoration: none; /* Убираем подчёркивание у ссылок */
+    color: #ffcc00;
+    text-decoration: none;
 }
 
 .review a:hover {
-    text-decoration: underline; /* Добавляем подчёркивание при наведении */
+    text-decoration: underline;
 }
 
-/* Стили для даты обзора */
 .review p:last-child {
-    font-style: italic; /* Курсив для текста */
+    font-style: italic; /* Курсив для текста даты обзора */
 }
 
-.spacer {
-    flex: 1; /* Элемент занимает доступное пространство, но остаётся невидимым */
+
+
+
+
+/* Стили для устройств с максимальной шириной 768px (например, для планшетов и смартфонов) */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column; /* Шапка в столбик */
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .navigation-menu {
+        position: static;
+        display: block;
+        text-align: left;
+    }
+
+    .navigation-menu li {
+        display: block; /* Список в столбик */
+        margin: 5px 0;
+    }
+
+    .review {
+        flex-direction: column; /* Элементы обзора в столбик */
+    }
+
+    .review-header {
+    display: flex;
+    align-items: center; /* Выравнивает элементы по центру по вертикали */
+}
+
+.review-header img {
+    max-width: 150px; /* или другой подходящий размер */
+    height: auto;
+    margin-right: 20px;
+}
+
+
+    main, .features, .review {
+        padding: 10px; /* Уменьшенные отступы */
+    }
+
+    .auth-links a, .navigation-menu li a {
+        padding: 5px 10px; /* Уменьшенные отступы для ссылок */
+    }
+
+    /* Можно добавить дополнительные стили для других элементов */
+}
+
+/* Стили для устройств с максимальной шириной 480px (особенно для смартфонов) */
+@media screen and (max-width: 480px) {
+    .site-name {
+        font-size: 1.2rem; /* Меньший размер шрифта для названия сайта */
+    }
+
+    .content, .site-description {
+        font-size: 0.9rem; /* Меньший размер шрифта для контента и описания сайта */
+    }
+
+    /* Можно добавить дополнительные стили для улучшения читаемости на маленьких экранах */
 }

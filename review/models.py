@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Review(models.Model):
+    image = models.ImageField('Фотография товара', upload_to='articles_images/', null=True, blank=True)
     product_name = models.CharField('Название продукта', max_length=100)
     model = models.CharField('Модель', max_length=50)
     review_body = models.TextField('Текст обзора')
