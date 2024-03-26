@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'authentication',
+    'crispy_forms',
     'main',
     'rating',
     'review',
@@ -68,10 +70,15 @@ WSGI_APPLICATION = 'yasite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'yandexsite',
+        'USER': 'minin',
+        'PASSWORD': 'formula1',
+        'HOST': 'localhost',
+        'PORT': '5432',  # оставьте пустым, чтобы использовать порт по умолчанию
     }
 }
+
 
 
 # Password validation
@@ -118,6 +125,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 

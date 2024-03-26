@@ -222,6 +222,37 @@ footer {
 }
 
 
+.form-control {
+    border-radius: 0; /* Сделать границы полей формы более плоскими */
+}
+
+.custom-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.custom-button {
+    width: 100%; /* Сделать кнопку на всю ширину формы */
+    background-color: #007bff; /* Синий цвет кнопки */
+    color: white; /* Белый текст */
+    padding: 10px; /* Паддинг для кнопки */
+    border-radius: 4px; /* Скругленные углы для кнопки */
+    border: 1px solid #007bff; /* Граница кнопки */
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Темно-синий цвет при наведении */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+
 
 
 

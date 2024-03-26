@@ -6,8 +6,8 @@
     <div class="logo-container">
         <img src="{% static 'main/img/logo-1.png' %}" alt="Лого" class="logo-image">
         <div class="text-container">
-            <span class="site-name">TechTopRanks</span>
-            <span class="site-description">Отзывы и покупка техники</span>
+            <span class="site-name">TechSpecto</span>
+            <span class="site-description">Обзоры и покупка техники</span>
         </div>
 
     </div>
@@ -16,6 +16,8 @@
             <li><a href="{% url 'home' %}">Главная</a></li>
             <li><a href="{% url 'rating_home' %}">Товары</a></li>
             <li><a href="{% url 'review_home' %}">Обзоры</a></li>
+            <li><a href="{% url 'login' %}">Вход</a></li>
+            <li><a href="{% url 'register' %}">Регистрация</a></li>
         </ul>
     </nav>
     </header>

@@ -7,7 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('rating/', include('rating.urls')),
-    path('review/', include('review.urls'))
+    path('review/', include('review.urls')),
+    path('authentication/', include('authentication.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
